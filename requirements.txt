@@ -1,0 +1,6 @@
+django
+opencv-python
+ultralytics
+torch
+numpy
+pillow
