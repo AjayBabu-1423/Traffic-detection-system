@@ -1,20 +1,25 @@
-from django.urls import path
-from . import views
+"""
+URL configuration for PROJECT project.
 
-urlpatterns =[
-    
-    # path('', views.Landing_1, name='Landing_1'),
-    path('Register_2/', views.Register_2, name='Register_2'),
-    path('Login_3/', views.Login_3, name='Login_3'),
-    path('', views.Home_4, name='Home_4'),
-    path('Teamates_5/', views.Teamates_5, name='Teamates_5'),
-    path('choosepassword', views.passhome, name='passhome'),
-    path('Domain_Result_6/', views.Domain_Result_6, name='Domain_Result_6'),
-    path('Problem_Statement_7/', views.Problem_Statement_7, name='Problem_Statement_7'),
-    path('Per_Info_8/', views.Per_Info_8, name='Per_Info_8'),
-    path('Deploy_8/',views.Deploy_8,name='Deploy_8'),
-    path('Deploy_9/', views.Deploy_9, name='Deploy_9'),
-    path('Deploy_10/', views.Deploy_10, name='Deploy_10'),
-    # path('Per_Database_10/', views.Per_Database_10, name='Per_Database_10'),
-    path('Logout/', views.Logout, name='Logout'),
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('APP.urls')),
+
 ]
